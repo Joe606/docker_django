@@ -1,0 +1,7 @@
+sudo dockerd #start docker.service
+create Dockerfile
+add .dockerignore file
+sudo docker build .
+create docker-compose.yml
+sudo nohup docker-compose up
+sudo docker-compose down
