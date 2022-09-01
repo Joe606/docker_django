@@ -4,6 +4,16 @@ services:
                 build: .
                 ports:
                         - "8000:8000"
-                command: python manage.py runserver 0.0.0.0:8000
+                command: python /docker_test/manage.py runserver 0.0.0.0:8000
                 volumes:
                         - .:/docker_test
+                depends_on:
+                        - db
+        db:
+                image: postgres:13
+                volumes:
+                        - postgres_data:/var/lib/postgresql/data/
+                environment:
+                        - "POSTGRES_HOST_AUTH_METHOD=trust"
+volumes:
+        postgres_data:

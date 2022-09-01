@@ -5,3 +5,8 @@ sudo docker build .
 create docker-compose.yml
 sudo nohup docker-compose up
 sudo docker-compose down
+sudo docker-compose up -d
+sudo docker-compose up -d --build (sudo docker-compose build . + sudo docker-compose up -d)
+sudo docker-compoes exec web python makemigrations
+sudo docker-compoes exec web python makemigrate
+
